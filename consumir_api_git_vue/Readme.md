@@ -20,6 +20,7 @@ realizadas:
 - Transiciones Vue.
 - Componentes Vue.
 
+![image](https://github.com/Azaharabl/Front/assets/90633858/608daa70-c84b-4c38-8997-72b88a6bf990)
 
 
 
