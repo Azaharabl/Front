@@ -22,6 +22,8 @@ realizadas:
 
 ![image](https://github.com/Azaharabl/Front/assets/90633858/608daa70-c84b-4c38-8997-72b88a6bf990)
 
+![image](https://github.com/Azaharabl/Front/assets/90633858/3227645d-074a-4e05-8fe4-b36e5e04d6f9)
+
 
 
 Url del curso realizado:
