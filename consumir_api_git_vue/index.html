@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio uno con git hub por azahara</title>
+    <!-- link al css! -->
+    <link rel="stylesheet" href="css.css">
+    <!-- cargar vue! -->
+    <script src="https://unpkg.com/vue@3"></script>
+    
+</head>
+<body>
+    <!-- div de app! -->
+    <div id="app">
+        
+        <!-- contenido-->
+        <article class="content">
+            <h1 class="content__title">Buscador de git</h1>
+            <h3>favoritos en padre es = {{ isFavorito }}</h3>
+
+            <!-- div para el formulario-->
+            <form class="search" v-on:submit.prevent= "obtenerGit()">
+                <input type="text" v-model="git" class="search__input" required placeholder="Search GitHub users">
+                <input type="submit" class="search__submit" value="Search">
+            </form>
+
+
+            <!-- div para respuesta correcta -->
+            <Transition>
+                 
+                 <div class="result_ok" v-if="result">
+                <h2>{{result.name}}</h2>
+                
+                <img class=".result__avatar" v-bind:src="result.avatar_url" alt="foto de perfil">
+                <hr>
+                
+                <a v-bind:href="result.html_url" target="_blank">{{result.html_url}}</a>
+                
+                <h3>Bio: {{result.bio}}</h3>
+                
+                <a href="#" v-if="!isFavorito" @click="clickFavoritos()">Agregar a Favoritos 💖</a>
+                <a href="#" v-if="isFavorito" @click="clickEliminarDeFavoritos()">Eliminar de Favoritos 💖</a>
+
+            </div>   
+        
+        
+        <!--esteves el código que iría aqui, pero vamos a modificarlo para que sea un componente en el siguiente comit:
+            <vista 
+            v-if="result"
+            :result="result"
+            :is-favorito="isFavorito"
+            @add-favorite="clickFavoritos"
+            @remove-favorite="clickEliminarDeFavoritos" />
+             -->
+             
+            </Transition>
+            <!-- div para errores -->
+            <div class="result__error" v-if="error">
+                <h1>Ha habido un error : {{datos.message}}</h1>
+            </div>
+        
+        </article>
+        <hr>
+        <article class="content">
+            <h1 class="content__title">Favoritos 💖</h1>
+            <!-- dib donde estarán los faboritos -->
+             <div >
+                <Transition-group name="list">
+                <div  v-for="[v,favorito] in favoritos" :key="v"
+                >
+                    <h2>{{favorito.name}}</h2>
+                    <a @click.prevent="mostrarUnFavoritos(favorito)" href="#">
+                       <!-- tiene un estilo favorito y un estilo dinamico favorito selected al buscarlo -->
+                        <img 
+                        class="favorito"
+                        :class="{'favorite-select': checkFavorite(favorito.login)}"
+                        
+
+                         v-bind:src="favorito.avatar_url" alt="foto de perfil">
+                    </a>
+                   
+                </div>
+            </Transition-group>
+            </div>
+        </article>
+    </div>
+    <!-- link al js en el body y  cargamos la app! -->
+    <script src="main.js"></script>
+    <script src="componentes.js"></script>
+    <script>const mountedApp = app.mount("#app")</script>
+</body>
+</html>
