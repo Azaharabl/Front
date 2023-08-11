@@ -1,2 +1,2 @@
 # Front
-Ejercicios y proyectos relacionados con : Vue, CSS, Html etc
+Ejercicios y proyectos relacionados con desarrollo de aplicaciones más orientada a front
