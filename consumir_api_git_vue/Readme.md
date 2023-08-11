@@ -17,7 +17,7 @@ Manejo de estado.
 Persistencia.
 Transiciones Vue.
 Componentes Vue.
-![1](![image](https://github.com/Azaharabl/Front/assets/90633858/48f7d051-8a37-462b-97a2-7de13871bcc1)
+(![image](https://github.com/Azaharabl/Front/assets/90633858/48f7d051-8a37-462b-97a2-7de13871bcc1)
 ](https://github.com/Azaharabl/Front/blob/main/consumir_api_git_vue/images/buscando.png))img 
 
 
